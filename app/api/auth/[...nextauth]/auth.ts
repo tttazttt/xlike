@@ -2,6 +2,9 @@ import { prisma } from "@/lib/prisma";
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
+process.env.NEXTAUTH_URL =
+  process.env.NEXTAUTH_URL ?? `https://${process.env.VERCEL_URL}`;
+
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
