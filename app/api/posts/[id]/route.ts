@@ -1,7 +1,6 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../auth/[...nextauth]/route";
 import { prisma } from "@/lib/prisma";
-
+import { authOptions } from "../../auth/[...nextauth]/auth";
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
